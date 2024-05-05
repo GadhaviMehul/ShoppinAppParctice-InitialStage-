@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/MainView">
+
+
+    <fragment
+        android:id="@+id/MainView"
+        android:name="com.example.florist.fragments.MainViewFragment"
+        android:label="MainView"
+        tools:layout="@layout/fragment_main_view">
+
+        <action
+            android:id="@+id/action_MainVIewFragment_to_CatalogViewFragment"
+            app:destination="@+id/CatalogView" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/CatalogView"
+        android:name="com.example.florist.fragments.CatalogViewFragment"
+        android:label="CatalogView"
+        tools:layout="@layout/fragment_catalog_view">
+
+        <action
+            android:id="@+id/action_CatalogViewFragment_to_ProductShoppingFragment"
+            app:destination="@+id/ProductShopping"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/ProductShopping"
+        android:name="com.example.florist.fragments.ProductShoppingFragment"
+        android:label="Update"
+        tools:layout="@layout/fragment_product_shopping">
+        <argument
+            android:name="currentProduct"
+            app:argType="com.example.florist.model.ProductItem" />
+
+    </fragment>
+
+
+</navigation>
